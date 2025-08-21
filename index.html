@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Online Sederhana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">RokokKu 🚬</h1>
+    <button id="cartBtn" class="relative">
+      🛒
+      <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 rounded-full">0</span>
+    </button>
+  </header>
+
+  <!-- Produk -->
+  <main class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    
+    <!-- Contoh Produk -->
+    <div class="bg-white shadow rounded-lg overflow-hidden">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwDrcSp8yx60ltYzh9I3znRiRdKIblSr7IzRb1tW2Xk4TVqTbt39C2KWY&s=10" class="w-full object-contain">
+      <div class="p-4">
+        <h2 class="font-semibold text-lg">Hs Rokok Filter Fresh Mint Click 20's</h2>
+        <p class="text-gray-600 text-sm mb-2">Isi 20 batang sensasi mint dan bisa di click.</p>
+  <div class="flex items-center mb-2 text-lg">
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-gray-300">★</span>
+  <span class="text-gray-300">★</span>
+</div>
+        <p class="font-bold text-blue-600 mb-3">Rp 38.500</p>
+        <button onclick="addToCart('Hs Rokok Filter Fresh Mint Click', 38500)" class="bg-blue-500 hover:bg-blue-600 text-white pxx-4 py-2 rounded">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded-lg overflow-hidden">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf_hFdPOVE7VBF_Hz1GPWuGyHgMO0jLwHrOhUJgJ_PIdbJ6kbFuc3QEuaf&s=10" class="w-full object-contain">
+      <div class="p-4">
+        <h2 class="font-semibold text-lg">LA Ice 16's</h2>
+        <p class="text-gray-600 text-sm mb-2">Isi 16 batang terjamin enak.</p>
+        <div class="flex items-center mb-2 text-lg">
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+</div>
+        <p class="font-bold text-blue-600 mb-3">Rp 37.200</p>
+        <button onclick="addToCart('LA Ice', 37200)" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded-lg overflow-hidden">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAI85OvZUxuq-XVWqnMsd6AXsktabbL9R7Odja9LHn16qiVfY70HWm0IrA&s=10" class="w-full object-contain">
+      <div class="p-4">
+        <h2 class="font-semibold text-lg">Marlboro Filter Vista Tropical Burst 16's</h2>
+        <p class="text-gray-600 text-sm mb-2">Isi 16 batang rasa mangga berry.</p>
+        <div class="flex items-center mb-2 text-lg">
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-gray-300">★</span>
+</div>
+        <p class="font-bold text-blue-600 mb-3">Rp 36.800</p>
+        <button onclick="addToCart('Marlboro Filter Vista Tropical Burst', 36800)" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add to Cart</button>
+      </div>
+    </div>
+
+<div class="bg-white shadow rounded-lg overflow-hidden">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9ot250ARn4L0wEJ_s-AFSl3KXrcHl9OWhsYSinPz9JbCsHyT8ih9Sf4HZ&s=10" class="w-full object-contain">
+      <div class="p-4">
+        <h2 class="font-semibold text-lg">GG Shiver 16's</h2>
+        <p class="text-gray-600 text-sm mb-2">Isi 16 batang rasa menthol + LA Ice.</p>
+        <div class="flex items-center mb-2 text-lg">
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+</div>
+        <p class="font-bold text-blue-600 mb-3">Rp 33.900</p>
+        <button onclick="addToCart('GG Shiver', 33900)" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add to Cart</button>
+      </div>
+    </div>
+    
+<div class="bg-white shadow rounded-lg overflow-hidden">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs8NA-md1ohAIWRjjAtM5-PrzwtSi1PgEGhz_tGYrzGcodb-sXoNJ13cQ&s=10" class="w-full object-contain">
+      <div class="p-4">
+        <h2 class="font-semibold text-lg">Djarum Super Fresh Cola 16's</h2>
+        <p class="text-gray-600 text-sm mb-2">Isi 16 batang rasa cola strong dan manis.</p>
+        <div class="flex items-center mb-2 text-lg">
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-gray-300">★</span>
+  <span class="text-gray-300">★</span>
+</div>
+        <p class="font-bold text-blue-600 mb-3">Rp 33.700</p>
+        <button onclick="addToCart('Djarum Super Fresh Cola', 33700)" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add to Cart</button>
+      </div>
+    </div>
+
+<div class="bg-white shadow rounded-lg overflow-hidden">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcKj1Rr5kl57hnskNFJTv7yCX8buU4YAEzZ5hQW6RNz_DfkNAtporh_yrO&s=10" class="w-full object-contain">
+      <div class="p-4">
+        <h2 class="font-semibold text-lg">Lucky Strike Cool Switch 20's</h2>
+        <p class="text-gray-600 text-sm mb-2">Isi 20 batang rasa mirip Marlboro Ice Burst + LA Ice (bukan menthol).</p>
+        <div class="flex items-center mb-2 text-lg">
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-gray-300">★</span>
+</div>
+        <p class="font-bold text-blue-600 mb-3">Rp 33.600</p>
+        <button onclick="addToCart('Lucky Striker Cool Switch', 33600)" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add to Cart</button>
+      </div>
+    </div>
+
+<div class="bg-white shadow rounded-lg overflow-hidden">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt_Mo4Acp6BNPNJ0I0worO_cGcPgBnW5XM9RNQ5na9uf8Mnulwe8XMpZM&s=10" class="w-full object-contain">
+      <div class="p-4">
+        <h2 class="font-semibold text-lg">Lucky Strike Purple Switch 20's</h2>
+        <p class="text-gray-600 text-sm mb-2">Isi 20 batang rasa mirip LA Ice + berry (versi lebih dingin Dari LA Purple Boost).</p>
+        <div class="flex items-center mb-2 text-lg">
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-gray-300">★</span>
+  <span class="text-gray-300">★</span>
+</div>
+        <p class="font-bold text-blue-600 mb-3">Rp 33.600</p>
+        <button onclick="addToCart('Lucky Stroke Purple Switch', 33600)" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add to Cart</button>
+      </div>
+    </div>
+    
+<div class="bg-white shadow rounded-lg overflow-hidden">
+      <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/MTA-178185121/camel_camel_activate_20_full01_fsnhks39.jpg" class="w-full object-contain">
+      <div class="p-4">
+        <h2 class="font-semibold text-lg">Camel Active Menthol 20's</h2>
+        <p class="text-gray-600 text-sm mb-2">Isi 20 batang rasa menthol lebih light Dari Marlboro Ice Burst.</p>
+        <div class="flex items-center mb-2 text-lg">
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-gray-300">★</span>
+</div>
+        <p class="font-bold text-blue-600 mb-3">Rp 33.500</p>
+        <button onclick="addToCart('Camel Active Menthol', 33500)" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add to Cart</button>
+      </div>
+    </div>
+
+<div class="bg-white shadow rounded-lg overflow-hidden">
+      <img src="https://i.gojekapi.com/darkroom/gomart-public-production/v2/images/public/images/3031adda-ff75-4745-9208-860637238823_Lucky-Strike-Berry-Freeze-Rokok-20-Batang.jpg" class="w-full object-contain">
+      <div class="p-4">
+        <h2 class="font-semibold text-lg">Lucky Strike Berry Freeze 20's</h2>
+        <p class="text-gray-600 text-sm mb-2">Isi 20 batang punya 2 klik rasa menthol dan berry.</p>
+        <div class="flex items-center mb-2 text-lg">
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-gray-300">★</span>
+</div>
+        <p class="font-bold text-blue-600 mb-3">Rp 33.000</p>
+        <button onclick="addToCart('Lucky Strike Berry Freeze', 33000)" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add to Cart</button>
+      </div>
+    </div>
+
+<div class="bg-white shadow rounded-lg overflow-hidden">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx--GOK6kVKoZPenypvBH69EXq2klYjLOqSZ0CO7GCp4AWLskONJfRjun3&s=10" class="w-full object-contain">
+      <div class="p-4">
+        <h2 class="font-semibold text-lg">Hs Filter Menthol Slim 20's</h2>
+        <p class="text-gray-600 text-sm mb-2">Isi 20 batang rasa menthol tipe rokok kecil mirip Esse.</p>
+        <div class="flex items-center mb-2 text-lg">
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-gray-300">★</span>
+  <span class="text-gray-300">★</span>
+</div>
+        <p class="font-bold text-blue-600 mb-3">Rp 32.800</p>
+        <button onclick="addToCart('Hs Filter Menthol Slim', 32800)" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add to Cart</button>
+      </div>
+    </div>
+
+<div class="bg-white shadow rounded-lg overflow-hidden">
+      <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/105/MTA-133809458/dunhill_dunhill_international_biru_20_rokok_-1_slop_-_10_bungkus_-_20_batang-_-_dunhill_light_-_blue_full01_duhscnv9.jpg" class="w-full object-contain">
+      <div class="p-4">
+        <h2 class="font-semibold text-lg">Dunhill Lights 20's</h2>
+        <p class="text-gray-600 text-sm mb-2">Isi 20 batang rasa smooth,ringan,halus karena tar dan nikotin rendah tapi no menthol,ice or berry.</p>
+        <div class="flex items-center mb-2 text-lg">
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-gray-300">★</span>
+  <span class="text-gray-300">★</span>
+</div>
+        <p class="font-bold text-blue-600 mb-3">Rp 31.300</p>
+        <button onclick="addToCart('Dunhill Lights', 31300)" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add to Cart</button>
+      </div>
+    </div>
+
+<div class="bg-white shadow rounded-lg overflow-hidden">
+      <img src="https://c.alfagift.id/product/1/1_A13420004192_20241003131415761_base.jpg" class="w-full object-contain">
+      <div class="p-4">
+        <h2 class="font-semibold text-lg">Dunhill Menthol 20's</h2>
+        <p class="text-gray-600 text-sm mb-2">Isi 20 batang rasa menthol mirip Marlboro Ice Burst.</p>
+        <div class="flex items-center mb-2 text-lg">
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+  <span class="text-yellow-400">★</span>
+</div>
+        <p class="font-bold text-blue-600 mb-3">Rp 31.300</p>
+        <button onclick="addToCart('Dunhill Menthol', 31300)" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add to Cart</button>
+      </div>
+    </div>
+
+
+  </main>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white rounded-lg shadow-lg p-6 w-96">
+      <h2 class="text-xl font-bold mb-4">Keranjang Belanja</h2>
+      <ul id="cartItems" class="space-y-2 mb-4"></ul>
+      <p class="font-bold mb-4">Total: Rp <span id="cartTotal">0</span></p>
+      <div class="flex justify-between">
+        <button onclick="closeCart()" class="bg-gray-400 px-4 py-2 rounded text-white">Tutup</button>
+        <button onclick="checkout()" class="bg-green-500 px-4 py-2 rounded text-white">Checkout</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Script -->
+  <script>
+    let cart = [];
+
+    function addToCart(name, price) {
+      cart.push({name, price});
+      document.getElementById("cartCount").innerText = cart.length;
+      alert(name + " ditambahkan ke keranjang!");
+    }
+
+    function openCart() {
+      let items = "";
+      let total = 0;
+      cart.forEach((item, i) => {
+        items += `<li>${i+1}. ${item.name} - Rp ${item.price.toLocaleString()}</li>`;
+        total += item.price;
+      });
+      document.getElementById("cartItems").innerHTML = items || "<li>Keranjang kosong</li>";
+      document.getElementById("cartTotal").innerText = total.toLocaleString();
+      document.getElementById("cartModal").classList.remove("hidden");
+    }
+
+    function closeCart() {
+      document.getElementById("cartModal").classList.add("hidden");
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Keranjang kosong!");
+        return;
+      }
+      let text = "Halo, saya ingin pesan:%0A";
+      cart.forEach((item, i) => {
+        text += `${i+1}. ${item.name} - Rp ${item.price.toLocaleString()}%0A`;
+      });
+      let total = cart.reduce((sum, item) => sum + item.price, 0);
+      text += `%0ATotal: Rp ${total.toLocaleString()}`;
+      
+      // ganti nomor WhatsApp berikut dengan nomor kamu
+      let phone = "6282131980299"; 
+      window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
+    }
+
+    document.getElementById("cartBtn").addEventListener("click", openCart);
+  </script>
+
+</body>
+</html>
